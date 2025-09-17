@@ -352,6 +352,66 @@
                 height: 40px;
             }
 
+            /* Make section icons smaller on mobile */
+            .section-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            /* Stack section titles vertically on mobile to prevent overflow */
+            .historical-context h2,
+            .applications h2 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            /* Ensure application cards don't overflow */
+            .application-category {
+                min-width: 0;
+                word-wrap: break-word;
+            }
+
+            .application-category h3 {
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+        }
+
+        /* Extra small screens - prevent horizontal scroll */
+        @media (max-width: 400px) {
+            .container {
+                padding: 16px 8px;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .applications-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .application-category {
+                padding: 12px;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .historical-context, .applications {
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+
+            .header-content {
+                gap: 8px;
+            }
+
+            .language-buttons {
+                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
