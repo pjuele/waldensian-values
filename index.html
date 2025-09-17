@@ -1120,6 +1120,11 @@
         function switchLanguage(lang) {
             currentLanguage = lang;
 
+            // Update URL parameter
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang.toUpperCase());
+            window.history.replaceState({}, '', url);
+
             // Update button states
             document.querySelectorAll('.language-button').forEach(btn => {
                 btn.classList.remove('active');
@@ -1134,7 +1139,16 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            renderContent('en');
+            // Check for language parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            const defaultLang = langParam ? langParam.toLowerCase() : 'en';
+
+            // Validate language exists
+            const validLangs = ['en', 'es', 'it', 'pt', 'fr'];
+            const initialLang = validLangs.includes(defaultLang) ? defaultLang : 'en';
+
+            switchLanguage(initialLang);
         });
     </script>
 </body>
