@@ -1,0 +1,224 @@
+{
+  "en": {
+    "meta": {
+      "title": "Secular Waldensian Values",
+      "subtitle": "A framework derived from 800+ years of Waldensian historical experience, adapted for modern secular contexts"
+    },
+    "values": [
+      {
+        "id": 1,
+        "title": "Voluntary Simplicity",
+        "description": "Embracing minimalism and frugality as conscious ethical choices rather than economic necessity. This value translates into sustainable living, mindful consumption, and prioritizing meaning over material accumulation.",
+        "accent": "red"
+      },
+      {
+        "id": 2,
+        "title": "Moral Integrity",
+        "description": "Maintaining unwavering ethical standards regardless of external pressure or personal cost. This manifests in modern contexts as transparency, accountability, and principled decision-making.",
+        "accent": "yellow"
+      },
+      {
+        "id": 3,
+        "title": "Universal Equality",
+        "description": "Recognizing the inherent dignity and equal worth of all individuals. This translates to egalitarian relationships, democratic participation, and rejection of hierarchical privilege based on status rather than merit.",
+        "accent": "green"
+      },
+      {
+        "id": 4,
+        "title": "Personal Responsibility",
+        "description": "Taking ownership of one's actions and their consequences, emphasizing individual agency while maintaining communal accountability. This promotes self-governance, critical thinking, and proactive engagement with ethical challenges.",
+        "accent": "blue"
+      },
+      {
+        "id": 5,
+        "title": "Community Solidarity",
+        "description": "Prioritizing collective welfare and mutual aid, forged through centuries of persecution and survival. This manifests as cooperative approaches to problem-solving and shared resource management.",
+        "accent": "gray"
+      },
+      {
+        "id": 6,
+        "title": "Educational Commitment",
+        "description": "Valuing knowledge, literacy, and critical inquiry as fundamental human rights and community obligations. This extends to lifelong learning, accessible education, and evidence-based reasoning.",
+        "accent": "red"
+      },
+      {
+        "id": 7,
+        "title": "Principled Resistance",
+        "description": "Standing against oppression and injustice through nonviolent means, even at personal cost. This encompasses civil disobedience, advocacy for marginalized groups, and persistent challenge to systems that violate human dignity.",
+        "accent": "yellow"
+      },
+      {
+        "id": 8,
+        "title": "Productive Work Ethic",
+        "description": "Embracing meaningful labor as both personal fulfillment and community contribution. This balances individual achievement with collective benefit, emphasizing innovation, craftsmanship, and sustainable economic development.",
+        "accent": "green"
+      },
+      {
+        "id": 9,
+        "title": "Cultural Preservation",
+        "description": "Maintaining historical memory and identity while adapting to new circumstances. This involves honoring ancestral wisdom, preserving meaningful traditions, and creating continuity between past and future generations.",
+        "accent": "blue"
+      },
+      {
+        "id": 10,
+        "title": "Justice Orientation",
+        "description": "Seeking fairness and equity in all relationships and systems, rejecting arbitrary authority and advocating for transparent, accountable governance. This encompasses both legal justice and broader social equity.",
+        "accent": "gray"
+      },
+      {
+        "id": 11,
+        "title": "Adaptive Resilience",
+        "description": "Maintaining core values while flexibly responding to changing circumstances, demonstrated through centuries of diaspora and cultural evolution. This combines principled steadfastness with practical adaptability.",
+        "accent": "red"
+      },
+      {
+        "id": 12,
+        "title": "Inclusive Cooperation",
+        "description": "Building bridges across differences while maintaining distinct identity, evidenced in modern ecumenical partnerships and interfaith dialogue. This balances cultural integrity with collaborative engagement.",
+        "accent": "yellow"
+      }
+    ],
+    "sections": {
+      "historicalContext": {
+        "title": "Historical Context",
+        "content": [
+          "These values emerged from the Waldensian experience beginning in 12th-century Lyon under Peter Waldo, crystallized through 800 years of persecution, exile, and community rebuilding. The 1655 Piedmontese Easter massacre, multiple exoduses, and eventual establishment of diaspora communities like Colonia Valdense (Uruguay, 1856) and Valdese, North Carolina (1893) forged these principles through lived experience rather than abstract philosophy.",
+          "The Waldensian rejection of ecclesiastical hierarchy, embrace of vernacular literacy, and commitment to moral authenticity created a framework that naturally evolved beyond religious boundaries. Their survival required developing values that could transcend specific theological contexts while maintaining community cohesion and ethical integrity."
+        ]
+      },
+      "modernApplications": {
+        "title": "Modern Applications",
+        "categories": [
+          {
+            "title": "Personal Decision-Making",
+            "description": "Using voluntary simplicity to evaluate consumption choices, applying moral integrity to navigate ethical dilemmas, and embracing personal responsibility while seeking community support."
+          },
+          {
+            "title": "Professional Ethics",
+            "description": "Implementing transparent practices in organizational leadership, promoting egalitarian workplace cultures, and balancing individual achievement with collective benefit."
+          },
+          {
+            "title": "Community Engagement",
+            "description": "Building mutual aid networks, preserving cultural heritage while embracing inclusive collaboration, and supporting accessible education and evidence-based discourse."
+          },
+          {
+            "title": "Social Innovation",
+            "description": "Developing sustainable economic models that balance profit with community welfare and creating democratic governance structures that ensure participatory decision-making."
+          }
+        ]
+      }
+    },
+    "footer": "These values provide a robust foundation for secular ethical frameworks, agent prompting systems, and decision-making models that prioritize human dignity, community welfare, and principled action."
+  },
+  "es": {
+    "meta": {
+      "title": "Valores Valdenses Seculares",
+      "subtitle": "Un marco derivado de más de 800 años de experiencia histórica valdense, adaptado para contextos seculares modernos"
+    },
+    "values": [
+      {
+        "id": 1,
+        "title": "Simplicidad Voluntaria",
+        "description": "Adoptar el minimalismo y la frugalidad como elecciones éticas conscientes en lugar de necesidad económica. Este valor se traduce en vida sostenible, consumo consciente y priorizar el significado sobre la acumulación material.",
+        "accent": "red"
+      },
+      {
+        "id": 2,
+        "title": "Integridad Moral",
+        "description": "Mantener estándares éticos inquebrantables independientemente de la presión externa o el costo personal. Esto se manifiesta en contextos modernos como transparencia, responsabilidad y toma de decisiones basada en principios.",
+        "accent": "yellow"
+      },
+      {
+        "id": 3,
+        "title": "Igualdad Universal",
+        "description": "Reconocer la dignidad inherente y el valor igual de todos los individuos. Esto se traduce en relaciones igualitarias, participación democrática y rechazo del privilegio jerárquico basado en estatus en lugar de mérito.",
+        "accent": "green"
+      },
+      {
+        "id": 4,
+        "title": "Responsabilidad Personal",
+        "description": "Asumir la responsabilidad de las propias acciones y sus consecuencias, enfatizando la agencia individual mientras se mantiene la responsabilidad comunal. Esto promueve el autogobierno, el pensamiento crítico y el compromiso proactivo con los desafíos éticos.",
+        "accent": "blue"
+      },
+      {
+        "id": 5,
+        "title": "Solidaridad Comunitaria",
+        "description": "Priorizar el bienestar colectivo y la ayuda mutua, forjada a través de siglos de persecución y supervivencia. Esto se manifiesta como enfoques cooperativos para la resolución de problemas y la gestión compartida de recursos.",
+        "accent": "gray"
+      },
+      {
+        "id": 6,
+        "title": "Compromiso Educativo",
+        "description": "Valorar el conocimiento, la alfabetización y la investigación crítica como derechos humanos fundamentales y obligaciones comunitarias. Esto se extiende al aprendizaje de por vida, la educación accesible y el razonamiento basado en evidencia.",
+        "accent": "red"
+      },
+      {
+        "id": 7,
+        "title": "Resistencia Basada en Principios",
+        "description": "Enfrentarse a la opresión e injusticia a través de medios no violentos, incluso a costo personal. Esto abarca la desobediencia civil, la defensa de grupos marginados y el desafío persistente a sistemas que violan la dignidad humana.",
+        "accent": "yellow"
+      },
+      {
+        "id": 8,
+        "title": "Ética de Trabajo Productivo",
+        "description": "Adoptar el trabajo significativo como realización personal y contribución comunitaria. Esto equilibra el logro individual con el beneficio colectivo, enfatizando la innovación, la artesanía y el desarrollo económico sostenible.",
+        "accent": "green"
+      },
+      {
+        "id": 9,
+        "title": "Preservación Cultural",
+        "description": "Mantener la memoria histórica e identidad mientras se adapta a nuevas circunstancias. Esto implica honrar la sabiduría ancestral, preservar tradiciones significativas y crear continuidad entre generaciones pasadas y futuras.",
+        "accent": "blue"
+      },
+      {
+        "id": 10,
+        "title": "Orientación hacia la Justicia",
+        "description": "Buscar equidad y justicia en todas las relaciones y sistemas, rechazando la autoridad arbitraria y abogando por una gobernanza transparente y responsable. Esto abarca tanto la justicia legal como la equidad social más amplia.",
+        "accent": "gray"
+      },
+      {
+        "id": 11,
+        "title": "Resistencia Adaptativa",
+        "description": "Mantener valores fundamentales mientras se responde flexiblemente a circunstancias cambiantes, demostrado a través de siglos de diáspora y evolución cultural. Esto combina firmeza de principios con adaptabilidad práctica.",
+        "accent": "red"
+      },
+      {
+        "id": 12,
+        "title": "Cooperación Inclusiva",
+        "description": "Construir puentes a través de las diferencias mientras se mantiene una identidad distinta, evidenciado en asociaciones ecuménicas modernas y diálogo interreligioso. Esto equilibra la integridad cultural con el compromiso colaborativo.",
+        "accent": "yellow"
+      }
+    ],
+    "sections": {
+      "historicalContext": {
+        "title": "Contexto Histórico",
+        "content": [
+          "Estos valores surgieron de la experiencia valdense comenzando en el Lyon del siglo XII bajo Pedro Valdo, cristalizados a través de 800 años de persecución, exilio y reconstrucción comunitaria. La masacre de la Pascua piamontesa de 1655, múltiples éxodos y el eventual establecimiento de comunidades de la diáspora como Colonia Valdense (Uruguay, 1856) y Valdese, Carolina del Norte (1893) forjaron estos principios a través de la experiencia vivida en lugar de la filosofía abstracta.",
+          "El rechazo valdense de la jerarquía eclesiástica, la adopción de la alfabetización vernácula y el compromiso con la autenticidad moral crearon un marco que evolucionó naturalmente más allá de los límites religiosos. Su supervivencia requirió desarrollar valores que pudieran trascender contextos teológicos específicos mientras mantenían la cohesión comunitaria y la integridad ética."
+        ]
+      },
+      "modernApplications": {
+        "title": "Aplicaciones Modernas",
+        "categories": [
+          {
+            "title": "Toma de Decisiones Personales",
+            "description": "Usar la simplicidad voluntaria para evaluar decisiones de consumo, aplicar la integridad moral para navegar dilemas éticos, y adoptar la responsabilidad personal mientras se busca apoyo comunitario."
+          },
+          {
+            "title": "Ética Profesional",
+            "description": "Implementar prácticas transparentes en el liderazgo organizacional, promover culturas laborales igualitarias y equilibrar el logro individual con el beneficio colectivo."
+          },
+          {
+            "title": "Compromiso Comunitario",
+            "description": "Construir redes de ayuda mutua, preservar el patrimonio cultural mientras se abraza la colaboración inclusiva, y apoyar la educación accesible y el discurso basado en evidencia."
+          },
+          {
+            "title": "Innovación Social",
+            "description": "Desarrollar modelos económicos sostenibles que equilibren la ganancia con el bienestar comunitario y crear estructuras de gobernanza democrática que aseguren la toma de decisiones participativa."
+          }
+        ]
+      }
+    },
+    "footer": "Estos valores proporcionan una base sólida para marcos éticos seculares, sistemas de indicaciones para agentes y modelos de toma de decisiones que priorizan la dignidad humana, el bienestar comunitario y la acción basada en principios."
+  }
+}

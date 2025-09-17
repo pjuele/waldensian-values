@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secular Waldensian Values</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <style>
+        :root {
+            --bg-primary: #09090b;
+            --bg-secondary: #181818;
+            --bg-tertiary: #252525;
+            --bg-hover: #404040;
+            --text-primary: #E5E5E5;
+            --text-white: #ffffff;
+            --border-primary: #252525;
+            --border-emphasis: #404040;
+            --accent-red: #ef4444;
+            --accent-yellow: #eab308;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-gray: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+        }
+
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-icon {
+            font-size: 1rem;
+            color: var(--accent-gray);
+            cursor: help;
+            opacity: 0.7;
+            transition: all 0.15s ease;
+        }
+
+        .tooltip-icon:hover {
+            opacity: 1;
+            color: var(--accent-blue);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-emphasis);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.15s ease;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid transparent;
+            border-top-color: var(--border-emphasis);
+        }
+
+        .tooltip-container:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .header p {
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .value-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.15s ease;
+            position: relative;
+        }
+
+        .value-card:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--border-emphasis);
+        }
+
+        .value-card.fade-in {
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .value-number {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent-gray);
+        }
+
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            padding-right: 32px;
+        }
+
+        .value-description {
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .value-image {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .section-icon {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+
+        .value-content {
+            flex: 1;
+        }
+
+        .value-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .value-text {
+            flex: 1;
+        }
+
+
+        .historical-context {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 48px;
+        }
+
+        .historical-context h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .historical-context p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .applications {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .applications h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .application-category {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            padding: 16px;
+        }
+
+        .application-category h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .application-category p {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-primary);
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            padding: 8px;
+            justify-content: center;
+            margin: 24px auto 48px auto;
+            width: fit-content;
+        }
+
+        .language-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 8px;
+            border-radius: 6px;
+            opacity: 0.6;
+        }
+
+        .language-button:hover {
+            background: var(--bg-tertiary);
+            opacity: 1;
+        }
+
+        .language-button.active {
+            background: var(--bg-tertiary);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 24px 16px;
+            }
+
+            .header h1 {
+                font-size: 1.875rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img src="images/logo.png" alt="Waldensian Values Logo" class="logo">
+                <h1 id="mainTitle">
+                    lux lucet in tenebris
+                    <div class="tooltip-container">
+                        <span class="tooltip-icon">ⓘ</span>
+                        <div class="tooltip" id="mottoTranslation">The light shines in the darkness</div>
+                    </div>
+                </h1>
+            </div>
+            <p id="mainSubtitle">A framework of secular values derived from 800+ years of Waldensian historical experience, adapted for modern contexts</p>
+        </header>
+
+        <div class="language-switcher">
+            <button class="language-button active" onclick="switchLanguage('en')" data-lang="en">🇬🇧</button>
+            <button class="language-button" onclick="switchLanguage('es')" data-lang="es">🇪🇸</button>
+            <button class="language-button" onclick="switchLanguage('it')" data-lang="it">🇮🇹</button>
+            <button class="language-button" onclick="switchLanguage('pt')" data-lang="pt">🇵🇹</button>
+            <button class="language-button" onclick="switchLanguage('fr')" data-lang="fr">🇫🇷</button>
+        </div>
+
+        <div class="values-grid" id="valuesGrid">
+            <!-- Values will be loaded dynamically from JSON -->
+        </div>
+
+        <div class="historical-context" id="historicalContext">
+            <!-- Historical context will be loaded dynamically from JSON -->
+        </div>
+
+        <div class="applications" id="modernApplications">
+            <!-- Applications will be loaded dynamically from JSON -->
+        </div>
+
+        <footer class="footer">
+            <p id="footerText"><!-- Footer text will be loaded dynamically from JSON --></p>
+        </footer>
+    </div>
+
+    <script>
+        // Data from JSON (embedded for simplicity)
+        const data = {
+            "en": {
+                "meta": {
+                    "title": "lux lucet in tenebris",
+                    "mottoTranslation": "The light shines in the darkness",
+                    "subtitle": "A framework of secular values derived from 800+ years of Waldensian historical experience, adapted for modern contexts"
+                },
+                "values": [
+                    {
+                        "id": 1,
+                        "title": "Voluntary Simplicity",
+                        "description": "Embracing minimalism and frugality as conscious ethical choices rather than economic necessity. This value translates into sustainable living, mindful consumption, and prioritizing meaning over material accumulation.",
+                        "accent": "red",
+                        "image": "images/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Moral Integrity",
+                        "description": "Maintaining unwavering ethical standards regardless of external pressure or personal cost. This manifests in modern contexts as transparency, accountability, and principled decision-making.",
+                        "accent": "yellow",
+                        "image": "images/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Universal Equality",
+                        "description": "Recognizing the inherent dignity and equal worth of all individuals. This translates to egalitarian relationships, democratic participation, and rejection of hierarchical privilege based on status rather than merit.",
+                        "accent": "green",
+                        "image": "images/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Personal Responsibility",
+                        "description": "Taking ownership of one's actions and their consequences, emphasizing individual agency while maintaining communal accountability. This promotes self-governance, critical thinking, and proactive engagement with ethical challenges.",
+                        "accent": "blue",
+                        "image": "images/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Community Solidarity",
+                        "description": "Prioritizing collective welfare and mutual aid, forged through centuries of persecution and survival. This manifests as cooperative approaches to problem-solving and shared resource management.",
+                        "accent": "gray",
+                        "image": "images/5.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "title": "Educational Commitment",
+                        "description": "Valuing knowledge, literacy, and critical inquiry as fundamental human rights and community obligations. This extends to lifelong learning, accessible education, and evidence-based reasoning.",
+                        "accent": "red",
+                        "image": "images/6.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "title": "Principled Resistance",
+                        "description": "Standing against oppression and injustice through nonviolent means, even at personal cost. This encompasses civil disobedience, advocacy for marginalized groups, and persistent challenge to systems that violate human dignity.",
+                        "accent": "yellow",
+                        "image": "images/7.jpg"
+                    },
+                    {
+                        "id": 8,
+                        "title": "Productive Work Ethic",
+                        "description": "Embracing meaningful labor as both personal fulfillment and community contribution. This balances individual achievement with collective benefit, emphasizing innovation, craftsmanship, and sustainable economic development.",
+                        "accent": "green",
+                        "image": "images/8.jpg"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Cultural Preservation",
+                        "description": "Maintaining historical memory and identity while adapting to new circumstances. This involves honoring ancestral wisdom, preserving meaningful traditions, and creating continuity between past and future generations.",
+                        "accent": "blue",
+                        "image": "images/9.jpg"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Justice Orientation",
+                        "description": "Seeking fairness and equity in all relationships and systems, rejecting arbitrary authority and advocating for transparent, accountable governance. This encompasses both legal justice and broader social equity.",
+                        "accent": "gray",
+                        "image": "images/10.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Adaptive Resilience",
+                        "description": "Maintaining core values while flexibly responding to changing circumstances, demonstrated through centuries of diaspora and cultural evolution. This combines principled steadfastness with practical adaptability.",
+                        "accent": "red",
+                        "image": "images/11.jpg"
+                    },
+                    {
+                        "id": 12,
+                        "title": "Inclusive Cooperation",
+                        "description": "Building bridges across differences while maintaining distinct identity, evidenced in modern ecumenical partnerships and interfaith dialogue. This balances cultural integrity with collaborative engagement.",
+                        "accent": "yellow",
+                        "image": "images/12.jpg"
+                    }
+                ],
+                "sections": {
+                    "historicalContext": {
+                        "title": "Historical Context",
+                        "content": [
+                            "These values emerged from the Waldensian experience beginning in 12th-century Lyon under Peter Waldo, crystallized through 800 years of persecution, exile, and community rebuilding. The 1655 Piedmontese Easter massacre, multiple exoduses, and eventual establishment of diaspora communities like Colonia Valdense (Uruguay, 1856) and Valdese, North Carolina (1893) forged these principles through lived experience rather than abstract philosophy.",
+                            "The Waldensian rejection of ecclesiastical hierarchy, embrace of vernacular literacy, and commitment to moral authenticity created a framework that naturally evolved beyond religious boundaries. Their survival required developing values that could transcend specific theological contexts while maintaining community cohesion and ethical integrity."
+                        ]
+                    },
+                    "modernApplications": {
+                        "title": "Modern Applications",
+                        "categories": [
+                            {
+                                "title": "Personal Decision-Making",
+                                "description": "Using voluntary simplicity to evaluate consumption choices, applying moral integrity to navigate ethical dilemmas, and embracing personal responsibility while seeking community support."
+                            },
+                            {
+                                "title": "Professional Ethics",
+                                "description": "Implementing transparent practices in organizational leadership, promoting egalitarian workplace cultures, and balancing individual achievement with collective benefit."
+                            },
+                            {
+                                "title": "Community Engagement",
+                                "description": "Building mutual aid networks, preserving cultural heritage while embracing inclusive collaboration, and supporting accessible education and evidence-based discourse."
+                            },
+                            {
+                                "title": "Social Innovation",
+                                "description": "Developing sustainable economic models that balance profit with community welfare and creating democratic governance structures that ensure participatory decision-making."
+                            }
+                        ]
+                    }
+                },
+                "footer": "These values provide a robust foundation for secular ethical frameworks, agent prompting systems, and decision-making models that prioritize human dignity, community welfare, and principled action."
+            },
+            "es": {
+                "meta": {
+                    "title": "lux lucet in tenebris",
+                    "mottoTranslation": "La luz brilla en las tinieblas",
+                    "subtitle": "Un marco de valores seculares derivado de más de 800 años de experiencia histórica valdense, adaptado para contextos modernos"
+                },
+                "values": [
+                    {
+                        "id": 1,
+                        "title": "Simplicidad Voluntaria",
+                        "description": "Adoptar el minimalismo y la frugalidad como elecciones éticas conscientes en lugar de necesidad económica. Este valor se traduce en vida sostenible, consumo consciente y priorizar el significado sobre la acumulación material.",
+                        "accent": "red",
+                        "image": "images/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Integridad Moral",
+                        "description": "Mantener estándares éticos inquebrantables independientemente de la presión externa o el costo personal. Esto se manifiesta en contextos modernos como transparencia, responsabilidad y toma de decisiones basada en principios.",
+                        "accent": "yellow",
+                        "image": "images/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Igualdad Universal",
+                        "description": "Reconocer la dignidad inherente y el valor igual de todos los individuos. Esto se traduce en relaciones igualitarias, participación democrática y rechazo del privilegio jerárquico basado en estatus en lugar de mérito.",
+                        "accent": "green",
+                        "image": "images/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Responsabilidad Personal",
+                        "description": "Asumir la responsabilidad de las propias acciones y sus consecuencias, enfatizando la agencia individual mientras se mantiene la responsabilidad comunal. Esto promueve el autogobierno, el pensamiento crítico y el compromiso proactivo con los desafíos éticos.",
+                        "accent": "blue",
+                        "image": "images/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Solidaridad Comunitaria",
+                        "description": "Priorizar el bienestar colectivo y la ayuda mutua, forjada a través de siglos de persecución y supervivencia. Esto se manifiesta como enfoques cooperativos para la resolución de problemas y la gestión compartida de recursos.",
+                        "accent": "gray",
+                        "image": "images/5.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "title": "Compromiso Educativo",
+                        "description": "Valorar el conocimiento, la alfabetización y la investigación crítica como derechos humanos fundamentales y obligaciones comunitarias. Esto se extiende al aprendizaje de por vida, la educación accesible y el razonamiento basado en evidencia.",
+                        "accent": "red",
+                        "image": "images/6.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "title": "Resistencia Basada en Principios",
+                        "description": "Enfrentarse a la opresión e injusticia a través de medios no violentos, incluso a costo personal. Esto abarca la desobediencia civil, la defensa de grupos marginados y el desafío persistente a sistemas que violan la dignidad humana.",
+                        "accent": "yellow",
+                        "image": "images/7.jpg"
+                    },
+                    {
+                        "id": 8,
+                        "title": "Ética de Trabajo Productivo",
+                        "description": "Adoptar el trabajo significativo como realización personal y contribución comunitaria. Esto equilibra el logro individual con el beneficio colectivo, enfatizando la innovación, la artesanía y el desarrollo económico sostenible.",
+                        "accent": "green",
+                        "image": "images/8.jpg"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Preservación Cultural",
+                        "description": "Mantener la memoria histórica e identidad mientras se adapta a nuevas circunstancias. Esto implica honrar la sabiduría ancestral, preservar tradiciones significativas y crear continuidad entre generaciones pasadas y futuras.",
+                        "accent": "blue",
+                        "image": "images/9.jpg"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Orientación hacia la Justicia",
+                        "description": "Buscar equidad y justicia en todas las relaciones y sistemas, rechazando la autoridad arbitraria y abogando por una gobernanza transparente y responsable. Esto abarca tanto la justicia legal como la equidad social más amplia.",
+                        "accent": "gray",
+                        "image": "images/10.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Resistencia Adaptativa",
+                        "description": "Mantener valores fundamentales mientras se responde flexiblemente a circunstancias cambiantes, demostrado a través de siglos de diáspora y evolución cultural. Esto combina firmeza de principios con adaptabilidad práctica.",
+                        "accent": "red",
+                        "image": "images/11.jpg"
+                    },
+                    {
+                        "id": 12,
+                        "title": "Cooperación Inclusiva",
+                        "description": "Construir puentes a través de las diferencias mientras se mantiene una identidad distinta, evidenciado en asociaciones ecuménicas modernas y diálogo interreligioso. Esto equilibra la integridad cultural con el compromiso colaborativo.",
+                        "accent": "yellow",
+                        "image": "images/12.jpg"
+                    }
+                ],
+                "sections": {
+                    "historicalContext": {
+                        "title": "Contexto Histórico",
+                        "content": [
+                            "Estos valores surgieron de la experiencia valdense comenzando en el Lyon del siglo XII bajo Pedro Valdo, cristalizados a través de 800 años de persecución, exilio y reconstrucción comunitaria. La masacre de la Pascua piamontesa de 1655, múltiples éxodos y el eventual establecimiento de comunidades de la diáspora como Colonia Valdense (Uruguay, 1856) y Valdese, Carolina del Norte (1893) forjaron estos principios a través de la experiencia vivida en lugar de la filosofía abstracta.",
+                            "El rechazo valdense de la jerarquía eclesiástica, la adopción de la alfabetización vernácula y el compromiso con la autenticidad moral crearon un marco que evolucionó naturalmente más allá de los límites religiosos. Su supervivencia requirió desarrollar valores que pudieran trascender contextos teológicos específicos mientras mantenían la cohesión comunitaria y la integridad ética."
+                        ]
+                    },
+                    "modernApplications": {
+                        "title": "Aplicaciones Modernas",
+                        "categories": [
+                            {
+                                "title": "Toma de Decisiones Personales",
+                                "description": "Usar la simplicidad voluntaria para evaluar decisiones de consumo, aplicar la integridad moral para navegar dilemas éticos, y adoptar la responsabilidad personal mientras se busca apoyo comunitario."
+                            },
+                            {
+                                "title": "Ética Profesional",
+                                "description": "Implementar prácticas transparentes en el liderazgo organizacional, promover culturas laborales igualitarias y equilibrar el logro individual con el beneficio colectivo."
+                            },
+                            {
+                                "title": "Compromiso Comunitario",
+                                "description": "Construir redes de ayuda mutua, preservar el patrimonio cultural mientras se abraza la colaboración inclusiva, y apoyar la educación accesible y el discurso basado en evidencia."
+                            },
+                            {
+                                "title": "Innovación Social",
+                                "description": "Desarrollar modelos económicos sostenibles que equilibren la ganancia con el bienestar comunitario y crear estructuras de gobernanza democrática que aseguren la toma de decisiones participativa."
+                            }
+                        ]
+                    }
+                },
+                "footer": "Estos valores proporcionan una base sólida para marcos éticos seculares, sistemas de indicaciones para agentes y modelos de toma de decisiones que priorizan la dignidad humana, el bienestar comunitario y la acción basada en principios."
+            },
+            "it": {
+                "meta": {
+                    "title": "lux lucet in tenebris",
+                    "mottoTranslation": "La luce risplende nelle tenebre",
+                    "subtitle": "Un quadro di valori secolari derivato da oltre 800 anni di esperienza storica valdese, adattato per contesti moderni"
+                },
+                "values": [
+                    {
+                        "id": 1,
+                        "title": "Semplicità Volontaria",
+                        "description": "Abbracciare il minimalismo e la frugalità come scelte etiche consapevoli piuttosto che necessità economica. Questo valore si traduce in vita sostenibile, consumo consapevole e priorità al significato rispetto all'accumulo materiale.",
+                        "accent": "red",
+                        "image": "images/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Integrità Morale",
+                        "description": "Mantenere standard etici incrollabili indipendentemente dalla pressione esterna o dal costo personale. Questo si manifesta in contesti moderni come trasparenza, responsabilità e processo decisionale basato sui principi.",
+                        "accent": "yellow",
+                        "image": "images/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Uguaglianza Universale",
+                        "description": "Riconoscere la dignità intrinseca e il valore uguale di tutti gli individui. Questo si traduce in relazioni egualitarie, partecipazione democratica e rifiuto del privilegio gerarchico basato sullo status piuttosto che sul merito.",
+                        "accent": "green",
+                        "image": "images/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Responsabilità Personale",
+                        "description": "Assumersi la responsabilità delle proprie azioni e delle loro conseguenze, enfatizzando l'agenzia individuale mantenendo la responsabilità comunitaria. Questo promuove l'autogoverno, il pensiero critico e l'impegno proattivo con le sfide etiche.",
+                        "accent": "blue",
+                        "image": "images/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Solidarietà Comunitaria",
+                        "description": "Dare priorità al benessere collettivo e al mutuo aiuto, forgiato attraverso secoli di persecuzione e sopravvivenza. Questo si manifesta come approcci cooperativi alla risoluzione dei problemi e gestione condivisa delle risorse.",
+                        "accent": "gray",
+                        "image": "images/5.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "title": "Impegno Educativo",
+                        "description": "Valorizzare la conoscenza, l'alfabetizzazione e l'indagine critica come diritti umani fondamentali e obblighi comunitari. Questo si estende all'apprendimento permanente, all'educazione accessibile e al ragionamento basato sull'evidenza.",
+                        "accent": "red",
+                        "image": "images/6.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "title": "Resistenza Basata sui Principi",
+                        "description": "Opporsi all'oppressione e all'ingiustizia attraverso mezzi non violenti, anche a costo personale. Questo comprende la disobbedienza civile, la difesa dei gruppi emarginati e la sfida persistente ai sistemi che violano la dignità umana.",
+                        "accent": "yellow",
+                        "image": "images/7.jpg"
+                    },
+                    {
+                        "id": 8,
+                        "title": "Etica del Lavoro Produttivo",
+                        "description": "Abbracciare il lavoro significativo come realizzazione personale e contributo comunitario. Questo bilancia il successo individuale con il beneficio collettivo, enfatizzando l'innovazione, l'artigianato e lo sviluppo economico sostenibile.",
+                        "accent": "green",
+                        "image": "images/8.jpg"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Preservazione Culturale",
+                        "description": "Mantenere la memoria storica e l'identità adattandosi a nuove circostanze. Questo comporta onorare la saggezza ancestrale, preservare tradizioni significative e creare continuità tra le generazioni passate e future.",
+                        "accent": "blue",
+                        "image": "images/9.jpg"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Orientamento alla Giustizia",
+                        "description": "Cercare equità e giustizia in tutte le relazioni e sistemi, rifiutando l'autorità arbitraria e sostenendo una governance trasparente e responsabile. Questo comprende sia la giustizia legale che l'equità sociale più ampia.",
+                        "accent": "gray",
+                        "image": "images/10.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Resilienza Adattiva",
+                        "description": "Mantenere i valori fondamentali rispondendo flessibilmente alle circostanze mutevoli, dimostrato attraverso secoli di diaspora ed evoluzione culturale. Questo combina fermezza di principi con adattabilità pratica.",
+                        "accent": "red",
+                        "image": "images/11.jpg"
+                    },
+                    {
+                        "id": 12,
+                        "title": "Cooperazione Inclusiva",
+                        "description": "Costruire ponti attraverso le differenze mantenendo un'identità distinta, evidenziato in moderne partnership ecumeniche e dialogo interreligioso. Questo bilancia l'integrità culturale con l'impegno collaborativo.",
+                        "accent": "yellow",
+                        "image": "images/12.jpg"
+                    }
+                ],
+                "sections": {
+                    "historicalContext": {
+                        "title": "Contesto Storico",
+                        "content": [
+                            "Questi valori sono emersi dall'esperienza valdese iniziando nella Lione del XII secolo sotto Pietro Valdo, cristallizzati attraverso 800 anni di persecuzione, esilio e ricostruzione comunitaria. Il massacro della Pasqua piemontese del 1655, molteplici esodi e l'eventuale stabilimento di comunità della diaspora come Colonia Valdense (Uruguay, 1856) e Valdese, Carolina del Nord (1893) hanno forgiato questi principi attraverso l'esperienza vissuta piuttosto che la filosofia astratta.",
+                            "Il rifiuto valdese della gerarchia ecclesiastica, l'abbraccio dell'alfabetizzazione vernacolare e l'impegno per l'autenticità morale hanno creato un quadro che si è evoluto naturalmente oltre i confini religiosi. La loro sopravvivenza ha richiesto lo sviluppo di valori che potessero trascendere contesti teologici specifici mantenendo la coesione comunitaria e l'integrità etica."
+                        ]
+                    },
+                    "modernApplications": {
+                        "title": "Applicazioni Moderne",
+                        "categories": [
+                            {
+                                "title": "Processo Decisionale Personale",
+                                "description": "Usare la semplicità volontaria per valutare le scelte di consumo, applicare l'integrità morale per navigare i dilemmi etici e abbracciare la responsabilità personale cercando supporto comunitario."
+                            },
+                            {
+                                "title": "Etica Professionale",
+                                "description": "Implementare pratiche trasparenti nella leadership organizzativa, promuovere culture lavorative egualitarie e bilanciare il successo individuale con il beneficio collettivo."
+                            },
+                            {
+                                "title": "Impegno Comunitario",
+                                "description": "Costruire reti di mutuo aiuto, preservare il patrimonio culturale abbracciando la collaborazione inclusiva e sostenere l'educazione accessibile e il discorso basato sull'evidenza."
+                            },
+                            {
+                                "title": "Innovazione Sociale",
+                                "description": "Sviluppare modelli economici sostenibili che bilanciano il profitto con il benessere comunitario e creare strutture di governance democratica che assicurano il processo decisionale partecipativo."
+                            }
+                        ]
+                    }
+                },
+                "footer": "Questi valori forniscono una base solida per quadri etici secolari, sistemi di prompt per agenti e modelli decisionali che danno priorità alla dignità umana, al benessere comunitario e all'azione basata sui principi."
+            },
+            "pt": {
+                "meta": {
+                    "title": "lux lucet in tenebris",
+                    "mottoTranslation": "A luz brilha nas trevas",
+                    "subtitle": "Uma estrutura de valores seculares derivada de mais de 800 anos de experiência histórica valdense, adaptada para contextos modernos"
+                },
+                "values": [
+                    {
+                        "id": 1,
+                        "title": "Simplicidade Voluntária",
+                        "description": "Abraçar o minimalismo e a frugalidade como escolhas éticas conscientes em vez de necessidade econômica. Este valor se traduz em vida sustentável, consumo consciente e priorização do significado sobre o acúmulo material.",
+                        "accent": "red",
+                        "image": "images/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Integridade Moral",
+                        "description": "Manter padrões éticos inabaláveis independentemente da pressão externa ou custo pessoal. Isso se manifesta em contextos modernos como transparência, responsabilidade e tomada de decisões baseada em princípios.",
+                        "accent": "yellow",
+                        "image": "images/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Igualdade Universal",
+                        "description": "Reconhecer a dignidade inerente e o valor igual de todos os indivíduos. Isso se traduz em relacionamentos igualitários, participação democrática e rejeição do privilégio hierárquico baseado em status em vez de mérito.",
+                        "accent": "green",
+                        "image": "images/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Responsabilidade Pessoal",
+                        "description": "Assumir responsabilidade pelas próprias ações e suas consequências, enfatizando a agência individual enquanto mantém a responsabilidade comunitária. Isso promove autogoverno, pensamento crítico e engajamento proativo com desafios éticos.",
+                        "accent": "blue",
+                        "image": "images/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Solidariedade Comunitária",
+                        "description": "Priorizar o bem-estar coletivo e a ajuda mútua, forjados através de séculos de perseguição e sobrevivência. Isso se manifesta como abordagens cooperativas para resolução de problemas e gestão compartilhada de recursos.",
+                        "accent": "gray",
+                        "image": "images/5.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "title": "Compromisso Educacional",
+                        "description": "Valorizar o conhecimento, alfabetização e investigação crítica como direitos humanos fundamentais e obrigações comunitárias. Isso se estende ao aprendizado ao longo da vida, educação acessível e raciocínio baseado em evidências.",
+                        "accent": "red",
+                        "image": "images/6.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "title": "Resistência Baseada em Princípios",
+                        "description": "Enfrentar a opressão e injustiça através de meios não violentos, mesmo com custo pessoal. Isso engloba desobediência civil, defesa de grupos marginalizados e desafio persistente a sistemas que violam a dignidade humana.",
+                        "accent": "yellow",
+                        "image": "images/7.jpg"
+                    },
+                    {
+                        "id": 8,
+                        "title": "Ética de Trabalho Produtivo",
+                        "description": "Abraçar o trabalho significativo como realização pessoal e contribuição comunitária. Isso equilibra conquista individual com benefício coletivo, enfatizando inovação, artesanato e desenvolvimento econômico sustentável.",
+                        "accent": "green",
+                        "image": "images/8.jpg"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Preservação Cultural",
+                        "description": "Manter memória histórica e identidade enquanto se adapta a novas circunstâncias. Isso envolve honrar a sabedoria ancestral, preservar tradições significativas e criar continuidade entre gerações passadas e futuras.",
+                        "accent": "blue",
+                        "image": "images/9.jpg"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Orientação para Justiça",
+                        "description": "Buscar equidade e justiça em todas as relações e sistemas, rejeitando autoridade arbitrária e defendendo governança transparente e responsável. Isso abrange tanto justiça legal quanto equidade social mais ampla.",
+                        "accent": "gray",
+                        "image": "images/10.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Resiliência Adaptativa",
+                        "description": "Manter valores fundamentais enquanto responde flexivelmente a circunstâncias mutáveis, demonstrado através de séculos de diáspora e evolução cultural. Isso combina firmeza de princípios com adaptabilidade prática.",
+                        "accent": "red",
+                        "image": "images/11.jpg"
+                    },
+                    {
+                        "id": 12,
+                        "title": "Cooperação Inclusiva",
+                        "description": "Construir pontes através das diferenças mantendo identidade distinta, evidenciado em parcerias ecumênicas modernas e diálogo inter-religioso. Isso equilibra integridade cultural com engajamento colaborativo.",
+                        "accent": "yellow",
+                        "image": "images/12.jpg"
+                    }
+                ],
+                "sections": {
+                    "historicalContext": {
+                        "title": "Contexto Histórico",
+                        "content": [
+                            "Esses valores emergiram da experiência valdense começando na Lyon do século XII sob Pedro Valdo, cristalizados através de 800 anos de perseguição, exílio e reconstrução comunitária. O massacre da Páscoa piemontesa de 1655, múltiplos êxodos e o eventual estabelecimento de comunidades da diáspora como Colônia Valdense (Uruguai, 1856) e Valdese, Carolina do Norte (1893) forjaram esses princípios através da experiência vivida em vez de filosofia abstrata.",
+                            "A rejeição valdense da hierarquia eclesiástica, abraço da alfabetização vernacular e compromisso com a autenticidade moral criaram uma estrutura que evoluiu naturalmente além das fronteiras religiosas. Sua sobrevivência exigiu desenvolver valores que pudessem transcender contextos teológicos específicos mantendo coesão comunitária e integridade ética."
+                        ]
+                    },
+                    "modernApplications": {
+                        "title": "Aplicações Modernas",
+                        "categories": [
+                            {
+                                "title": "Tomada de Decisão Pessoal",
+                                "description": "Usar simplicidade voluntária para avaliar escolhas de consumo, aplicar integridade moral para navegar dilemas éticos e abraçar responsabilidade pessoal enquanto busca apoio comunitário."
+                            },
+                            {
+                                "title": "Ética Profissional",
+                                "description": "Implementar práticas transparentes na liderança organizacional, promover culturas de trabalho igualitárias e equilibrar conquista individual com benefício coletivo."
+                            },
+                            {
+                                "title": "Engajamento Comunitário",
+                                "description": "Construir redes de ajuda mútua, preservar patrimônio cultural abraçando colaboração inclusiva e apoiar educação acessível e discurso baseado em evidências."
+                            },
+                            {
+                                "title": "Inovação Social",
+                                "description": "Desenvolver modelos econômicos sustentáveis que equilibrem lucro com bem-estar comunitário e criar estruturas de governança democrática que assegurem tomada de decisão participativa."
+                            }
+                        ]
+                    }
+                },
+                "footer": "Esses valores fornecem uma base sólida para estruturas éticas seculares, sistemas de prompt para agentes e modelos de tomada de decisão que priorizam dignidade humana, bem-estar comunitário e ação baseada em princípios."
+            },
+            "fr": {
+                "meta": {
+                    "title": "lux lucet in tenebris",
+                    "mottoTranslation": "La lumière brille dans les ténèbres",
+                    "subtitle": "Un cadre de valeurs séculaires dérivé de plus de 800 ans d'expérience historique vaudoise, adapté aux contextes modernes"
+                },
+                "values": [
+                    {
+                        "id": 1,
+                        "title": "Simplicité Volontaire",
+                        "description": "Embrasser le minimalisme et la frugalité comme choix éthiques conscients plutôt que nécessité économique. Cette valeur se traduit par une vie durable, une consommation réfléchie et la priorité au sens plutôt qu'à l'accumulation matérielle.",
+                        "accent": "red",
+                        "image": "images/1.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Intégrité Morale",
+                        "description": "Maintenir des standards éthiques inébranlables indépendamment de la pression externe ou du coût personnel. Cela se manifeste dans les contextes modernes par la transparence, la responsabilité et la prise de décision basée sur les principes.",
+                        "accent": "yellow",
+                        "image": "images/2.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "title": "Égalité Universelle",
+                        "description": "Reconnaître la dignité inhérente et la valeur égale de tous les individus. Cela se traduit par des relations égalitaires, une participation démocratique et le rejet du privilège hiérarchique basé sur le statut plutôt que le mérite.",
+                        "accent": "green",
+                        "image": "images/3.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "title": "Responsabilité Personnelle",
+                        "description": "Assumer la responsabilité de ses actions et de leurs conséquences, en mettant l'accent sur l'agence individuelle tout en maintenant la responsabilité communautaire. Cela favorise l'auto-gouvernance, la pensée critique et l'engagement proactif avec les défis éthiques.",
+                        "accent": "blue",
+                        "image": "images/4.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "title": "Solidarité Communautaire",
+                        "description": "Prioriser le bien-être collectif et l'entraide, forgés à travers des siècles de persécution et de survie. Cela se manifeste par des approches coopératives de résolution de problèmes et de gestion partagée des ressources.",
+                        "accent": "gray",
+                        "image": "images/5.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "title": "Engagement Éducatif",
+                        "description": "Valoriser la connaissance, l'alphabétisation et l'enquête critique comme droits humains fondamentaux et obligations communautaires. Cela s'étend à l'apprentissage tout au long de la vie, à l'éducation accessible et au raisonnement basé sur les preuves.",
+                        "accent": "red",
+                        "image": "images/6.jpg"
+                    },
+                    {
+                        "id": 7,
+                        "title": "Résistance Basée sur les Principes",
+                        "description": "S'opposer à l'oppression et à l'injustice par des moyens non violents, même au prix personnel. Cela englobe la désobéissance civile, la défense des groupes marginalisés et le défi persistant aux systèmes qui violent la dignité humaine.",
+                        "accent": "yellow",
+                        "image": "images/7.jpg"
+                    },
+                    {
+                        "id": 8,
+                        "title": "Éthique de Travail Productif",
+                        "description": "Embrasser le travail significatif comme épanouissement personnel et contribution communautaire. Cela équilibre la réussite individuelle avec le bénéfice collectif, en mettant l'accent sur l'innovation, l'artisanat et le développement économique durable.",
+                        "accent": "green",
+                        "image": "images/8.jpg"
+                    },
+                    {
+                        "id": 9,
+                        "title": "Préservation Culturelle",
+                        "description": "Maintenir la mémoire historique et l'identité tout en s'adaptant aux nouvelles circonstances. Cela implique d'honorer la sagesse ancestrale, de préserver les traditions significatives et de créer une continuité entre les générations passées et futures.",
+                        "accent": "blue",
+                        "image": "images/9.jpg"
+                    },
+                    {
+                        "id": 10,
+                        "title": "Orientation vers la Justice",
+                        "description": "Rechercher l'équité et la justice dans toutes les relations et systèmes, en rejetant l'autorité arbitraire et en plaidant pour une gouvernance transparente et responsable. Cela englobe à la fois la justice légale et l'équité sociale plus large.",
+                        "accent": "gray",
+                        "image": "images/10.jpg"
+                    },
+                    {
+                        "id": 11,
+                        "title": "Résilience Adaptative",
+                        "description": "Maintenir les valeurs fondamentales tout en répondant de manière flexible aux circonstances changeantes, démontré à travers des siècles de diaspora et d'évolution culturelle. Cela combine la fermeté des principes avec l'adaptabilité pratique.",
+                        "accent": "red",
+                        "image": "images/11.jpg"
+                    },
+                    {
+                        "id": 12,
+                        "title": "Coopération Inclusive",
+                        "description": "Construire des ponts à travers les différences tout en maintenant une identité distincte, mis en évidence dans les partenariats œcuméniques modernes et le dialogue interreligieux. Cela équilibre l'intégrité culturelle avec l'engagement collaboratif.",
+                        "accent": "yellow",
+                        "image": "images/12.jpg"
+                    }
+                ],
+                "sections": {
+                    "historicalContext": {
+                        "title": "Contexte Historique",
+                        "content": [
+                            "Ces valeurs ont émergé de l'expérience vaudoise commençant dans le Lyon du XIIe siècle sous Pierre Valdo, cristallisées à travers 800 ans de persécution, d'exil et de reconstruction communautaire. Le massacre de Pâques piémontais de 1655, les multiples exodes et l'établissement éventuel de communautés de la diaspora comme Colonia Valdense (Uruguay, 1856) et Valdese, Caroline du Nord (1893) ont forgé ces principes à travers l'expérience vécue plutôt que la philosophie abstraite.",
+                            "Le rejet vaudois de la hiérarchie ecclésiastique, l'adoption de l'alphabétisation vernaculaire et l'engagement envers l'authenticité morale ont créé un cadre qui a évolué naturellement au-delà des frontières religieuses. Leur survie a nécessité le développement de valeurs qui pouvaient transcender des contextes théologiques spécifiques tout en maintenant la cohésion communautaire et l'intégrité éthique."
+                        ]
+                    },
+                    "modernApplications": {
+                        "title": "Applications Modernes",
+                        "categories": [
+                            {
+                                "title": "Prise de Décision Personnelle",
+                                "description": "Utiliser la simplicité volontaire pour évaluer les choix de consommation, appliquer l'intégrité morale pour naviguer les dilemmes éthiques et embrasser la responsabilité personnelle tout en cherchant le soutien communautaire."
+                            },
+                            {
+                                "title": "Éthique Professionnelle",
+                                "description": "Mettre en œuvre des pratiques transparentes dans le leadership organisationnel, promouvoir des cultures de travail égalitaires et équilibrer la réussite individuelle avec le bénéfice collectif."
+                            },
+                            {
+                                "title": "Engagement Communautaire",
+                                "description": "Construire des réseaux d'entraide, préserver le patrimoine culturel tout en embrassant la collaboration inclusive et soutenir l'éducation accessible et le discours basé sur les preuves."
+                            },
+                            {
+                                "title": "Innovation Sociale",
+                                "description": "Développer des modèles économiques durables qui équilibrent le profit avec le bien-être communautaire et créer des structures de gouvernance démocratique qui assurent la prise de décision participative."
+                            }
+                        ]
+                    }
+                },
+                "footer": "Ces valeurs fournissent une base solide pour les cadres éthiques séculaires, les systèmes de prompt pour agents et les modèles de prise de décision qui privilégient la dignité humaine, le bien-être communautaire et l'action basée sur les principes."
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function renderContent(lang) {
+            const langData = data[lang];
+
+            // Update meta content
+            const titleElement = document.getElementById('mainTitle');
+            const titleText = titleElement.firstChild;
+            if (titleText && titleText.nodeType === Node.TEXT_NODE) {
+                titleText.textContent = langData.meta.title + ' ';
+            } else {
+                // If structure changed, rebuild it
+                titleElement.innerHTML = `
+                    ${langData.meta.title}
+                    <div class="tooltip-container">
+                        <span class="tooltip-icon">ⓘ</span>
+                        <div class="tooltip" id="mottoTranslation">${langData.meta.mottoTranslation}</div>
+                    </div>
+                `;
+            }
+
+            // Update tooltip content
+            const tooltipElement = document.getElementById('mottoTranslation');
+            if (tooltipElement) {
+                tooltipElement.textContent = langData.meta.mottoTranslation;
+            }
+
+            document.getElementById('mainSubtitle').textContent = langData.meta.subtitle;
+
+            // Render values
+            const valuesGrid = document.getElementById('valuesGrid');
+            valuesGrid.innerHTML = '';
+
+            langData.values.forEach((value, index) => {
+                const valueCard = document.createElement('div');
+                valueCard.className = 'value-card';
+                valueCard.setAttribute('data-accent', value.accent);
+
+                valueCard.innerHTML = `
+                    ${value.image ? `<img src="${value.image}" alt="${value.title}" class="value-image">` : ''}
+                    <div class="value-number">${value.id}</div>
+                    <h3 class="value-title">${value.title}</h3>
+                    <p class="value-description">${value.description}</p>
+                `;
+
+                valuesGrid.appendChild(valueCard);
+
+                // Add staggered animation
+                setTimeout(() => {
+                    valueCard.classList.add('fade-in');
+                }, index * 100);
+            });
+
+            // Render historical context
+            const historicalContext = document.getElementById('historicalContext');
+            const histSection = langData.sections.historicalContext;
+            historicalContext.innerHTML = `
+                <h2>
+                    <img src="images/historical-context.jpg" alt="Historical Context" class="section-icon">
+                    ${histSection.title}
+                </h2>
+                ${histSection.content.map(p => `<p>${p}</p>`).join('')}
+            `;
+
+            // Render modern applications
+            const modernApplications = document.getElementById('modernApplications');
+            const appSection = langData.sections.modernApplications;
+            modernApplications.innerHTML = `
+                <h2>
+                    <img src="images/modern-applications.jpg" alt="Modern Applications" class="section-icon">
+                    ${appSection.title}
+                </h2>
+                <div class="applications-grid">
+                    ${appSection.categories.map(cat => `
+                        <div class="application-category">
+                            <h3>${cat.title}</h3>
+                            <p>${cat.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            // Update footer
+            document.getElementById('footerText').textContent = langData.footer;
+        }
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+
+            // Update button states
+            document.querySelectorAll('.language-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Render content
+            renderContent(lang);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderContent('en');
+        });
+    </script>
+</body>
+</html>
